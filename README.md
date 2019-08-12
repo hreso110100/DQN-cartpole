@@ -2,4 +2,4 @@
 
 **Results:**
 
-Problem was solved in total 187 episodes
+Problem was solved in total 165 episodes

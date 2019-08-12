@@ -7,13 +7,16 @@ import numpy as np
 from DQN import DQN
 
 TEST_INDEX = 1
-MAX_EPISODES = 300
+MAX_EPISODES = 3
 MAX_TIME_STEPS = 200
 
 
 # writing parameters of DQN to CSV file
 def write_results(agent: DQN, episode: int):
     file_path = 'results/results.csv'
+
+    if not os.path.exists('results'):
+        os.makedirs('results')
 
     # append header for the first time
     if not os.path.isfile(file_path):
@@ -38,6 +41,9 @@ def write_results(agent: DQN, episode: int):
 
 # plotting number of steps in episodes
 def plot_episodes(episodes_length: list):
+    if not os.path.exists('graphs'):
+        os.makedirs('graphs')
+
     plt.plot(episodes_length)
     plt.ylabel('Steps')
     plt.xlabel('Episode')
